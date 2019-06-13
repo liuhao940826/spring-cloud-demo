@@ -15,6 +15,8 @@
         <module>eureka-cluster-server01</module>
         <module>eureka-cluster-server02</module>
         <module>eureka-cluster-server03</module>
+        <module>cloud-consumer02-customRule</module>
+        <module>cloud-provider02</module>
     </modules>
 
 
