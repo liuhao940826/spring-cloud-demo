@@ -16,7 +16,7 @@ public class DepartController {
     @Autowired
     private DepartService service;
 
-    // 注入服务发现客户端
+    // cloud 自带的类 注入服务发现客户端
     @Autowired
     private DiscoveryClient client;
 
@@ -48,6 +48,11 @@ public class DepartController {
         return service.listAllDeparts();
     }
 
+
+    /**
+     * 测试获取服务的名字
+     * @return
+     */
     @GetMapping("/discovery")
     public Object discoveryHandle() {
         // 获取Eureka中所有的微服务名称
