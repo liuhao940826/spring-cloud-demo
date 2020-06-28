@@ -1,9 +1,9 @@
-package com.self.controller;
+package self.controller;
 
-import com.self.bean.Depart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import self.bean.Depart;
 
 import java.util.List;
 
@@ -49,11 +49,4 @@ public class TestController {
         String url = SERVICE_PROVIDER + "/provider/depart/list/";
         return restTemplate.getForObject(url, List.class);
     }
-
-    @GetMapping("/getPort")
-    public String getPort(){
-        String url = SERVICE_PROVIDER + "/provider/depart/list/";
-        return restTemplate.getForObject(url, String.class);
-    }
-
 }

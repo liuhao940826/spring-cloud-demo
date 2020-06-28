@@ -1,12 +1,12 @@
-package com.self.controller;
+package self.controller;
 
-import com.self.bean.Depart;
-import com.self.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+import self.bean.Depart;
+import self.service.DepartService;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class DepartController {
     @Autowired
     private DepartService service;
 
-    // cloud 自带的类 注入服务发现客户端
+    // 注入服务发现客户端
     @Autowired
     private DiscoveryClient client;
 
@@ -48,11 +48,6 @@ public class DepartController {
         return service.listAllDeparts();
     }
 
-
-    /**
-     * 测试获取服务的名字
-     * @return
-     */
     @GetMapping("/discovery")
     public Object discoveryHandle() {
         // 获取Eureka中所有的微服务名称
@@ -74,5 +69,4 @@ public class DepartController {
     public String getProviderPort(){
         return port;
     }
-
 }

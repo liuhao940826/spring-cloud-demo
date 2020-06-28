@@ -1,0 +1,13 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: alan-consumer-8182   # 暴露微服务名称
+
+eureka:
+  instance:
+    hostname: alan-consumer-8182    # 指定EurekaServer主机名
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka     # 暴露Eureka服务中心地址
