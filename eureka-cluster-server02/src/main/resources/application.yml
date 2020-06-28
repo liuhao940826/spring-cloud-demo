@@ -12,6 +12,6 @@ eureka:
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka     # 暴露Eureka服务中心地址
   server:
     # 设置自我保护机制的阈值，默认0.85
-#    renewal-percent-threshold: 0.75
+    renewal-percent-threshold: 0.75
     # 关闭Eureka的自我保护机制（不建议关闭）
     # enable-self-preservation: false

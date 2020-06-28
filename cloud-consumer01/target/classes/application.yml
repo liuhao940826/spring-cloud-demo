@@ -5,9 +5,11 @@ spring:
   application:
     name: alan-consumer-8181   # 暴露微服务名称
 
+# 指定Eureka服务中心
 eureka:
-  instance:
-    hostname: alan-consumer-8181    # 指定EurekaServer主机名
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka     # 暴露Eureka服务中心地址
+      #      defaultZone: http://localhost:8000/eureka # 这里是eureka-server的地址
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
+  instance:
+    instance-id: alan-onsumer-8181
