@@ -1,6 +1,7 @@
 package com.self.controller;
 
 import com.self.bean.Depart;
+import com.self.config.FilterUrlConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +13,10 @@ import java.util.List;
 public class TestController {
     @Autowired
     private RestTemplate restTemplate;
+
+
+    @Autowired
+    FilterUrlConfiguration urlConfig;
 
     // 将“主机名+端口号”方式修改为“微服务名称”
     // private static final String SERVICE_PROVIDER = "http://localhost:8081";
@@ -55,5 +60,13 @@ public class TestController {
         String url = SERVICE_PROVIDER + "/provider/depart/list/";
         return restTemplate.getForObject(url, String.class);
     }
+
+    @GetMapping("/getUrl")
+    public String getUrl(){
+        List<String> url = urlConfig.getUrl();
+        System.out.println(url);
+        return  "";
+    }
+
 
 }

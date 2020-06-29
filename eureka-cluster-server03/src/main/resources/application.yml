@@ -5,7 +5,7 @@ eureka:
   instance:
     hostname: eureka8300.com    # 指定EurekaServer主机名
   client:
-    register-with-eureka: false    # 指定是否向Eureka中注册当前主机
+    register-with-eureka: false    # 指示此实例是否应将其信息注册到eureka服务器以供其他人发现
     fetch-registry: false          # 指定是否能够从Eureka中获取注册表
     service-url:
       defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka     # 暴露Eureka服务中心地址
