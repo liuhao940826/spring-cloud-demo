@@ -19,7 +19,7 @@
     </properties>
 
     <dependencies>
-        <!--actuator依赖 完善info 信息-->
+        <!--actuator依赖 完善info 信息 服务下架等-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

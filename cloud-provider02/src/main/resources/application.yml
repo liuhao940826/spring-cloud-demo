@@ -50,3 +50,14 @@ info:
   app.name: cloud-provider01
   app.desc: mic-server-cloud
   author: alan.liu
+
+management:
+  #开启所有监控 访问 /actuator/shutdown  从注册列表删除
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #开启shutdown监控 访问 /actuator/service_registry -d {"status":"DOWN/UP"}
+  endpoint:
+    shutdown:
+      enabled: true
