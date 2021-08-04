@@ -18,5 +18,7 @@ eureka:
 filter:
   url[0]: wwww.baidu.com
   url[1]: wwww.taobao.com
-
+feign:
+  httpclient:
+    connection-timeout: 5000 #指定fegin客户端链接超时
 
