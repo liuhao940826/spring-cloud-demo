@@ -20,7 +20,7 @@ import java.util.Random;
 public class CustomRuleConfig implements IRule {
 
     private ILoadBalancer loadBalancer;
-
+    //排除列表
     private List<Integer> postList;
 
     @Override
