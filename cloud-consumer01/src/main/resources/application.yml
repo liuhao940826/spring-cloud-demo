@@ -21,6 +21,8 @@ filter:
 feign:
   httpclient:
     connection-timeout: 5000 #指定fegin客户端链接超时
+  hystrix:
+    enabled: true #开启fegin对hystix的支持
 
 
 
