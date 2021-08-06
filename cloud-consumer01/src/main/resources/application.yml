@@ -24,7 +24,8 @@ feign:
   hystrix:
     enabled: true #开启fegin对hystix的支持
 
-
-
-
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream #sse 对这里进行解析

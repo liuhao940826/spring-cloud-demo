@@ -18,5 +18,14 @@ eureka:
 filter:
   url[0]: wwww.baidu.com
   url[1]: wwww.taobao.com
+feign:
+  httpclient:
+    connection-timeout: 5000 #指定fegin客户端链接超时
+  hystrix:
+    enabled: true #开启fegin对hystix的支持
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream #sse 对这里进行解析

@@ -3,6 +3,8 @@ package com.self.fallback;
 import com.self.bean.Depart;
 import com.self.service.DepartService;
 import feign.hystrix.FallbackFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
  * @Date 2021/8/5 下午4:20
  * @Created by liuhao
  */
+@Component
 public class DefaultFallbackFactory implements FallbackFactory<DepartService> {
 
     /**
