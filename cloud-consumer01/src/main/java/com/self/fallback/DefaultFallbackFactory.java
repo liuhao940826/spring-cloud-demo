@@ -38,6 +38,7 @@ public class DefaultFallbackFactory implements FallbackFactory<DepartService> {
 
                 return Arrays.asList(depart);
             }
+
         };
     }
 }
