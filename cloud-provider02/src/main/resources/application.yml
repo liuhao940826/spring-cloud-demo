@@ -15,8 +15,8 @@ logging:
 
 spring:
   application:
-    name: alan-provider-8082   # 暴露微服务名称 在没有instance.instance-id的时候暴露的就是 ip+name+端口 172.16.11.184:alan-provider-8082:8082
-
+    #name: alan-provider-8082   # 暴露微服务名称 在没有instance.instance-id的时候暴露的就是 ip+name+端口 172.16.11.184:alan-provider-8082:8082
+    name: alan-provider
   jpa:
     generate-ddl: true
     show-sql: true
@@ -37,10 +37,14 @@ spring:
 eureka:
   client:
     service-url:
-#      defaultZone: http://localhost:8000/eureka # 这里是eureka-server的地址
-      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
+      defaultZone: http://localhost:8000/eureka # 这里是eureka-server的地址
+#      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
   instance:
     instance-id: alan-provider-8082
+    #设置每一秒发送心跳
+    lease-renewal-interval-in-seconds: 1
+
+
 
 
 info:
