@@ -1,6 +1,7 @@
 package com.self.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.self.bean.Depart;
 import com.self.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,8 @@ public class TestController3 {
     DepartService service;
 
 
-    @HystrixCommand(fallbackMethod = "getFallBack")
+    @HystrixCommand(fallbackMethod = "getFallBack",
+    commandProperties = @HystrixProperty(name ="execution.isolation.thread.timeoutInMilliseconds" ,value ="2000" ))
     @GetMapping("/list3")
     public List<Depart> listHandle() {
         return service.listHandle();
